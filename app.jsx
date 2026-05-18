@@ -291,7 +291,6 @@ function Product({ t }) {
               <ul>
                 {p.bullets.map(b => <li key={b}>{b}</li>)}
               </ul>
-              <div className="price">{p.price}</div>
             </div>
           ))}
         </div>
