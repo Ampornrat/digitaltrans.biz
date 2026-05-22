@@ -502,7 +502,12 @@ function Footer({ t, lang }) {
         </div>
         <div className="footer-bottom">
           <div>{t.footer.legal}</div>
-          <div>BANGKOK · TH</div>
+          <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
+            <a href="accessibility.html" style={{ color: "inherit", textDecoration: "underline", textUnderlineOffset: 3 }}>
+              {lang === "th" ? "นโยบายการเข้าถึง" : "Accessibility"}
+            </a>
+            <span>BANGKOK · TH</span>
+          </div>
         </div>
       </div>
     </footer>

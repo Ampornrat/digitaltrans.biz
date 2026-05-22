@@ -1,0 +1,50 @@
+name: Accessibility CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  axe-audit:
+    name: axe-core WCAG 2.1 AA Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Start static file server
+        run: npx --yes serve@14 . --listen 3000 &
+
+      - name: Wait for server to be ready
+        run: |
+          echo "Waiting for server..."
+          for i in $(seq 1 15); do
+            curl -sf http://localhost:3000/index.html > /dev/null && echo "Server ready" && break
+            sleep 1
+          done
+
+      - name: Run axe-core accessibility audit
+        run: |
+          npx --yes @axe-core/cli@4 \
+            http://localhost:3000/index.html \
+            --exit \
+            --timeout 30000 \
+            --tags wcag2a,wcag2aa,wcag21a,wcag21aa
+        continue-on-error: false
+
+      - name: Run axe-core on Accessibility Statement page
+        run: |
+          npx @axe-core/cli@4 \
+            http://localhost:3000/accessibility.html \
+            --exit \
+            --timeout 15000 \
+            --tags wcag2a,wcag2aa,wcag21a,wcag21aa
+        continue-on-error: false

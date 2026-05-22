@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>นโยบายการเข้าถึง — Digitaltransform Co., Ltd.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/logo-mark.png" type="image/png" />
+  <style>
+    .a11y-page { max-width: 780px; margin: 0 auto; padding: 80px var(--pad) 120px; }
+    .a11y-page h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 500; letter-spacing: -0.02em; margin: 32px 0 8px; line-height: 1.1; }
+    .a11y-page h2 { font-size: 20px; font-weight: 600; margin: 40px 0 12px; letter-spacing: -0.01em; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+    .a11y-page p, .a11y-page li { font-size: 16px; line-height: 1.7; color: var(--mute); margin: 0 0 12px; }
+    .a11y-page li { margin: 0 0 6px; }
+    .a11y-page ul { padding-left: 20px; margin: 0 0 16px; }
+    .a11y-page a { color: var(--c-magenta-dark); text-decoration: underline; }
+    .a11y-page a:hover { color: var(--ink); }
+    .a11y-page .badge { display: inline-flex; align-items: center; gap: 8px; background: #E8F5EE; color: #1B7F4D; border: 1px solid #B6DEC9; border-radius: 999px; padding: 6px 14px; font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.06em; font-weight: 500; margin-bottom: 24px; }
+    .a11y-page .badge::before { content: "✓"; font-weight: 700; }
+    .a11y-page .known-limit { background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 16px 20px; margin: 0 0 12px; }
+    .a11y-page .known-limit p { margin: 0; font-size: 14.5px; }
+    .a11y-page .lang-toggle { display: flex; gap: 8px; margin-bottom: 40px; }
+    .a11y-page .lang-toggle a { font-size: 13px; font-family: var(--f-mono); letter-spacing: 0.08em; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line); color: var(--mute); text-decoration: none; }
+    .a11y-page .lang-toggle a.active { background: var(--ink); color: white; border-color: var(--ink); }
+    .a11y-page .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--mute); font-size: 13.5px; text-decoration: none; font-family: var(--f-mono); letter-spacing: 0.04em; margin-bottom: 0; }
+    .a11y-page .back-link:hover { color: var(--ink); }
+  </style>
+</head>
+<body lang="th">
+  <div class="wrap a11y-page">
+
+    <a class="back-link" href="index.html">← กลับหน้าหลัก / Back to home</a>
+
+    <h1>นโยบายการเข้าถึง<br /><span style="color:var(--mute);font-size:0.6em;font-weight:400;">Accessibility Statement</span></h1>
+
+    <div class="badge">WCAG 2.1 Level AA — ผ่านการทดสอบ พฤษภาคม 2569</div>
+
+    <!-- ===== ภาษาไทย ===== -->
+    <section aria-label="นโยบายการเข้าถึง ภาษาไทย">
+
+      <h2>ความมุ่งมั่นด้านการเข้าถึง</h2>
+      <p>บริษัท ดิจิทัลทรานฟอร์ม จำกัด มุ่งมั่นที่จะทำให้เว็บไซต์ <strong>digitaltrans.biz</strong> สามารถเข้าถึงได้สำหรับทุกคน รวมถึงผู้ที่มีความต้องการพิเศษด้านการมองเห็น การได้ยิน การเคลื่อนไหว หรือการรับรู้</p>
+
+      <h2>มาตรฐานที่ปฏิบัติตาม</h2>
+      <p>เว็บไซต์นี้ออกแบบให้สอดคล้องกับ <strong>Web Content Accessibility Guidelines (WCAG) 2.1 ระดับ AA</strong> ซึ่งกำหนดโดย World Wide Web Consortium (W3C)</p>
+      <p>การทดสอบล่าสุดดำเนินการด้วย <strong>axe-core 4.9.1</strong> ผล: <strong>0 violations / 44 passes</strong></p>
+
+      <h2>คุณสมบัติด้านการเข้าถึงที่มีให้</h2>
+      <ul>
+        <li><strong>Skip link</strong> — ลิงก์ "ข้ามไปยังเนื้อหาหลัก" ปรากฏเมื่อกด Tab เพื่อให้ผู้ใช้ keyboard ข้ามเมนูได้</li>
+        <li><strong>Landmark regions</strong> — ใช้ <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code> สำหรับ screen reader</li>
+        <li><strong>Heading hierarchy</strong> — โครงสร้าง h1 → h2 → h3 เป็นลำดับ ไม่ข้ามระดับ</li>
+        <li><strong>Color contrast</strong> — ทุก text element ผ่านอัตราส่วน 4.5:1 (ข้อความปกติ) หรือ 3:1 (ข้อความขนาดใหญ่)</li>
+        <li><strong>Keyboard navigation</strong> — ทุก element ที่ interactive สามารถ focus ได้ด้วย Tab พร้อม focus ring ที่เห็นชัด</li>
+        <li><strong>Form labels</strong> — ทุก field ในฟอร์มติดต่อมี label เชื่อมกันด้วย <code>for</code>/<code>id</code></li>
+        <li><strong>ARIA attributes</strong> — ปุ่มเมนู มี <code>aria-expanded</code>, ปุ่มเลือกภาษามี <code>aria-pressed</code></li>
+        <li><strong>Language attribute</strong> — <code>html[lang]</code> อัปเดตอัตโนมัติตามภาษาที่เลือก (ไทย/อังกฤษ)</li>
+        <li><strong>Reduced motion</strong> — ปิด animation ทั้งหมดเมื่อผู้ใช้เปิด "Reduce Motion" ในระบบปฏิบัติการ</li>
+      </ul>
+
+      <h2>ข้อจำกัดที่ทราบ</h2>
+      <div class="known-limit">
+        <p><strong>Gradient text</strong> — ข้อความหัวเรื่อง "built for Thai businesses" ใช้การไล่สีแบบ CSS gradient ซึ่งเครื่องมืออัตโนมัติไม่สามารถตรวจสอบ contrast ได้ครบถ้วน อย่างไรก็ตาม ได้รับการตรวจสอบด้วยตนเองแล้ว และส่วนที่เข้มที่สุดของ gradient ผ่านอัตราส่วน 3:1 สำหรับข้อความขนาดใหญ่ (WCAG 1.4.3)</p>
+      </div>
+
+      <h2>ติดต่อเพื่อรายงานปัญหาด้านการเข้าถึง</h2>
+      <p>หากพบปัญหาในการเข้าถึงเว็บไซต์นี้ กรุณาติดต่อเราได้ที่:</p>
+      <ul>
+        <li>อีเมล: <a href="mailto:ampornrat.n@gmail.com">ampornrat.n@gmail.com</a></li>
+        <li>โทรศัพท์: <a href="tel:+66925369797">+66 92 536 9797</a></li>
+      </ul>
+      <p>เราจะตอบกลับภายใน 2 วันทำการ</p>
+
+      <h2>วันที่ประเมินล่าสุด</h2>
+      <p>พฤษภาคม 2569 (2026) — ตรวจสอบด้วย axe-core 4.9.1, VoiceOver (macOS), และ keyboard-only navigation</p>
+
+    </section>
+
+    <hr style="border:none;border-top:1px solid var(--line);margin:56px 0;" />
+
+    <!-- ===== English ===== -->
+    <section aria-label="Accessibility Statement in English" lang="en">
+
+      <h2>Commitment to Accessibility</h2>
+      <p>Digitaltransform Co., Ltd. is committed to ensuring <strong>digitaltrans.biz</strong> is accessible to everyone, including people with visual, auditory, motor, or cognitive disabilities.</p>
+
+      <h2>Conformance Status</h2>
+      <p>This website is designed to conform to <strong>Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</strong>, published by the World Wide Web Consortium (W3C).</p>
+      <p>Latest automated test using <strong>axe-core 4.9.1</strong>: <strong>0 violations / 44 passes</strong>. Continuous integration runs on every code push via GitHub Actions.</p>
+
+      <h2>Accessibility Features</h2>
+      <ul>
+        <li><strong>Skip link</strong> — "Skip to main content" appears on Tab focus, allowing keyboard users to bypass navigation</li>
+        <li><strong>Landmark regions</strong> — Proper <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code> elements for screen reader navigation</li>
+        <li><strong>Heading hierarchy</strong> — Sequential h1 → h2 → h3 structure with no skipped levels</li>
+        <li><strong>Color contrast</strong> — All text passes 4.5:1 (normal text) or 3:1 (large text) thresholds</li>
+        <li><strong>Keyboard navigation</strong> — All interactive elements are reachable by Tab with a visible focus ring</li>
+        <li><strong>Form labels</strong> — Every contact form field has a programmatically associated <code>&lt;label&gt;</code></li>
+        <li><strong>ARIA attributes</strong> — Menu button uses <code>aria-expanded</code>; language toggles use <code>aria-pressed</code></li>
+        <li><strong>Language attribute</strong> — <code>html[lang]</code> updates automatically when Thai/English is toggled</li>
+        <li><strong>Reduced motion</strong> — All animations are suppressed when "Reduce Motion" is enabled in the OS</li>
+      </ul>
+
+      <h2>Known Limitations</h2>
+      <div class="known-limit">
+        <p><strong>Gradient text</strong> — The headline "built for Thai businesses" uses a CSS gradient applied via <code>background-clip: text</code>. Automated tools cannot fully verify gradient contrast. Manual inspection confirms the dominant (darkest) portion of the gradient meets the 3:1 ratio for large text per WCAG 1.4.3.</p>
+      </div>
+
+      <h2>Feedback & Contact</h2>
+      <p>If you experience any accessibility barriers on this site, please contact us:</p>
+      <ul>
+        <li>Email: <a href="mailto:ampornrat.n@gmail.com">ampornrat.n@gmail.com</a></li>
+        <li>Phone: <a href="tel:+66925369797">+66 92 536 9797</a></li>
+      </ul>
+      <p>We aim to respond within 2 business days.</p>
+
+      <h2>Assessment Date</h2>
+      <p>May 2026 — Tested with axe-core 4.9.1, VoiceOver (macOS), and keyboard-only navigation. CI re-runs on every GitHub push.</p>
+
+    </section>
+
+  </div>
+</body>
+</html>
