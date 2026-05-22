@@ -14,13 +14,13 @@ function BrandMark({ size = 32 }) {
 function Arrow({ kind = "right" }) {
   if (kind === "ne") {
     return (
-      <svg className="arrow" width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <svg className="arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
         <path d="M3 11L11 3M11 3H4.5M11 3V9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     );
   }
   return (
-    <svg className="arrow" width="14" height="14" viewBox="0 0 14 14" fill="none">
+    <svg className="arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
       <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -61,13 +61,13 @@ function Nav({ lang, setLang, active, t }) {
 
         <div className="nav-cta">
           <div className="lang-pill" role="group" aria-label="Language">
-            <button className={lang === "th" ? "on" : ""} onClick={() => setLang("th")}>TH</button>
-            <button className={lang === "en" ? "on" : ""} onClick={() => setLang("en")}>EN</button>
+            <button aria-label="ภาษาไทย" aria-pressed={lang === "th"} className={lang === "th" ? "on" : ""} onClick={() => setLang("th")}>TH</button>
+            <button aria-label="English" aria-pressed={lang === "en"} className={lang === "en" ? "on" : ""} onClick={() => setLang("en")}>EN</button>
           </div>
           <a href="#contact" className="btn btn-primary nav-cta-btn" style={{ height: 40, padding: "0 18px", fontSize: 14 }}>
             <span>{t.cta.contact}</span>
           </a>
-          <button className="nav-burger" aria-label="Menu" onClick={() => setOpen(o => !o)}>
+          <button className="nav-burger" aria-label="Menu" aria-expanded={open} aria-controls="nav-mobile-menu" onClick={() => setOpen(o => !o)}>
             {open ? (
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <path d="M4 4l10 10M14 4L4 14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
@@ -80,7 +80,7 @@ function Nav({ lang, setLang, active, t }) {
           </button>
         </div>
 
-        <div className={"nav-mobile" + (open ? " open" : "")}>
+        <div id="nav-mobile-menu" className={"nav-mobile" + (open ? " open" : "")}>
           {COPY.nav[lang].map((n) => (
             <a key={n.id} href={"#" + n.id} className={active === n.id ? "active" : ""} onClick={() => setOpen(false)}>
               {n.label}
@@ -220,7 +220,7 @@ function About({ t }) {
             {t.about.values.map(v => (
               <div key={v.k}>
                 <div className="num">{v.k}</div>
-                <h4>{v.t}</h4>
+                <h3>{v.t}</h3>
                 <p>{v.d}</p>
               </div>
             ))}
@@ -430,31 +430,31 @@ function Contact({ t, lang }) {
             </div>
           </div>
 
-          <form className="contact-form" onSubmit={submit}>
+          <form className="contact-form" onSubmit={submit} noValidate>
             <div className="row">
               <div>
-                <label>{L.name}</label>
-                <input type="text" required placeholder={lang === "th" ? "เช่น สมชาย ใจดี" : "e.g. Anuwat Boonmee"} />
+                <label htmlFor="contact-name">{L.name}</label>
+                <input id="contact-name" type="text" required aria-required="true" placeholder={lang === "th" ? "เช่น สมชาย ใจดี" : "e.g. Anuwat Boonmee"} />
               </div>
               <div>
-                <label>{L.company}</label>
-                <input type="text" placeholder={lang === "th" ? "บริษัท…" : "Company name"} />
+                <label htmlFor="contact-company">{L.company}</label>
+                <input id="contact-company" type="text" placeholder={lang === "th" ? "บริษัท…" : "Company name"} />
               </div>
             </div>
             <div className="row">
               <div>
-                <label>{L.email}</label>
-                <input type="email" required placeholder="you@company.co.th" />
+                <label htmlFor="contact-email">{L.email}</label>
+                <input id="contact-email" type="email" required aria-required="true" placeholder="you@company.co.th" />
               </div>
               <div>
-                <label>{L.phone}</label>
-                <input type="tel" placeholder="+66 …" />
+                <label htmlFor="contact-phone">{L.phone}</label>
+                <input id="contact-phone" type="tel" placeholder="+66 …" />
               </div>
             </div>
             <div className="row full">
               <div>
-                <label>{L.topic}</label>
-                <select defaultValue="">
+                <label htmlFor="contact-topic">{L.topic}</label>
+                <select id="contact-topic" defaultValue="">
                   <option value="" disabled>{lang === "th" ? "เลือกหัวข้อ" : "Select a topic"}</option>
                   {t.contact.topics.map(top => <option key={top}>{top}</option>)}
                 </select>
@@ -462,8 +462,8 @@ function Contact({ t, lang }) {
             </div>
             <div className="row full">
               <div>
-                <label>{L.message}</label>
-                <textarea placeholder={lang === "th" ? "เล่าให้เราฟังเกี่ยวกับโครงการของคุณ…" : "Tell us about your project…"}></textarea>
+                <label htmlFor="contact-message">{L.message}</label>
+                <textarea id="contact-message" placeholder={lang === "th" ? "เล่าให้เราฟังเกี่ยวกับโครงการของคุณ…" : "Tell us about your project…"}></textarea>
               </div>
             </div>
             <div className="submit-row">
@@ -493,7 +493,7 @@ function Footer({ t, lang }) {
           </div>
           {t.footer.cols.map(col => (
             <div className="footer-col" key={col.h}>
-              <h5>{col.h}</h5>
+              <h3>{col.h}</h3>
               <ul>
                 {col.links.map(l => <li key={l}><a href="#">{l}</a></li>)}
               </ul>
@@ -563,6 +563,7 @@ function App() {
   }, [tw.language]);
 
   useEffect(() => {
+    document.documentElement.setAttribute("lang", lang);
     document.body.setAttribute("lang", lang);
     document.title = lang === "th"
       ? "ดิจิทัลทรานฟอร์ม — ที่ปรึกษาดิจิทัลทรานส์ฟอร์เมชัน"
@@ -590,8 +591,11 @@ function App() {
 
   return (
     <>
+      <a className="skip-link" href="#main-content">
+        {lang === "th" ? "ข้ามไปยังเนื้อหาหลัก" : "Skip to main content"}
+      </a>
       <Nav lang={lang} setLang={setLang} active={active} t={t} />
-      <main>
+      <main id="main-content">
         <Hero t={t} lang={lang} />
         <Trusted t={t} />
         <About t={t} />
