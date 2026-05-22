@@ -7,7 +7,7 @@ const { useState, useEffect, useRef } = React;
 
 function BrandMark({ size = 32 }) {
   return (
-    <img src="assets/logo-mark.png" alt="Digitaltransform" width={size} height={size} style={{ width: size, height: size, objectFit: "contain" }} />
+    <img src="assets/logo-mark.png" alt="" role="presentation" width={size} height={size} style={{ width: size, height: size, objectFit: "contain" }} />
   );
 }
 

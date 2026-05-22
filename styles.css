@@ -9,6 +9,7 @@
   --grad-full: linear-gradient(110deg, #3023AE 0%, #932CC4 35%, #F62D7D 70%, #FFC166 100%);
 
   --c-magenta: #F62D7D;
+  --c-magenta-dark: #B8005C; /* WCAG AA on light bg: ~6:1 contrast ratio */
   --c-orange:  #FFC166;
   --c-indigo:  #3023AE;
   --c-violet:  #932CC4;
@@ -207,7 +208,7 @@ body[lang="th"] .lead { line-height: 1.7; }
 
 .btn-grad {
   background: var(--grad-warm);
-  color: white;
+  color: var(--ink);
   box-shadow: 0 12px 28px -12px rgba(246, 45, 125, 0.5);
 }
 
@@ -596,7 +597,7 @@ body[lang="th"] .nav-brand .word small { font-size: 11px; }
 .values .num {
   font-family: var(--f-mono);
   font-size: 11px;
-  color: var(--c-magenta);
+  color: var(--c-magenta-dark);
   letter-spacing: 0.1em;
 }
 .values h3 {
@@ -718,7 +719,7 @@ body[lang="th"] .nav-brand .word small { font-size: 11px; }
   padding: 4px 10px;
   border-radius: 999px;
   background: var(--grad-warm);
-  color: white;
+  color: var(--ink);
   align-self: flex-start;
   margin-bottom: 28px;
 }
@@ -835,7 +836,7 @@ body[lang="th"] .nav-brand .word small { font-size: 11px; }
   font-weight: 500;
   letter-spacing: -0.01em;
 }
-.case-card .metrics .m:first-child .k { color: var(--c-magenta); }
+.case-card .metrics .m:first-child .k { color: var(--c-magenta-dark); }
 .case-card .metrics .v {
   font-family: var(--f-mono);
   font-size: 10px;
@@ -888,7 +889,7 @@ body[lang="th"] .nav-brand .word small { font-size: 11px; }
   font-family: var(--f-mono);
   font-size: 11px;
   letter-spacing: 0.12em;
-  color: var(--mute-2);
+  color: var(--mute);
 }
 .consultant-head {
   border-bottom: 1px solid var(--line);
@@ -906,7 +907,7 @@ body[lang="th"] .nav-brand .word small { font-size: 11px; }
 }
 .consultant-tagline {
   margin: 12px 0 0;
-  color: var(--c-magenta);
+  color: var(--c-magenta-dark);
   font-size: 14.5px;
   line-height: 1.5;
   font-style: italic;
@@ -983,7 +984,7 @@ body[lang="th"] .nav-brand .word small { font-size: 11px; }
   font-size: 15.5px;
   line-height: 1.5;
 }
-.contact-info .item.email .val { color: var(--c-magenta); }
+.contact-info .item.email .val { color: var(--c-magenta-dark); }
 
 .contact-form {
   background: white;
